@@ -1,0 +1,135 @@
+<extend name="Public/base"/>
+<block name="style"></block>
+<block name="scriptop"></block>
+<block name="body">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>{$language.Product-Classification}</legend>
+    </fieldset>
+    <fieldset class="layui-elem-field">
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="float:right;margin-right:25px;">
+                    <button class="layui-btn" onclick="create()" type="button">{$language.created}</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="layui-form">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="100">
+                <col width="100">
+                <col width="100">
+                <col width="100">
+                <col width="100">
+                <col width="100">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>{$language.chinese}</th>
+                <th>{$language.english}</th>
+                <th>{$language.status}</th>
+                <th>{$language.create-time}</th>
+                <th>{$language.update-time}</th>
+                <th>{$language.operation}</th>
+            </tr>
+            </thead>
+            <tbody id="ajax_return">
+                <foreach name="data" item="vo" key="k">
+                    <tr>
+                        <td>{$vo.chinese}</td>
+                        <td>{$vo.english}</td>
+                        <td>
+                            <switch name="vo.status">
+                                <case value="activation"><input type="checkbox"  data-id="{$vo.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                                <default />	<input type="checkbox"  data-id="{$vo.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+                            </switch>
+                        </td>
+                        <td>{$vo.created_time}</td>
+                        <td>{$vo.updated_time}</td>
+                        <td><button class="layui-btn layui-btn-mini" style="background-color: #17a2b8;" onclick="update({$vo.id})">{$language.updated}</button></td>
+                    </tr>
+                </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form'], function(){
+            var $ = layui.jquery, form = layui.form;
+            /*修改状态*/
+            form.on('switch(status)', function(obj){
+                layer.load(1);
+                var id = $(this).attr("data-id");
+                if(obj.elem.checked){
+                    var status = 'activation';
+                }else{
+                    var status = 'defaulted';
+                }
+                $.ajax({
+                    type: 'POST',
+                    url:'/admin.php/Category/CategoryStatus',
+                    data:"id="+id+"&status="+status,// 你的formid
+                    dataType:'json',
+                    success: function(json){
+                        layer.closeAll('loading');
+                        if(json.rel==1){
+                            layer.msg(json.msg);
+                        }else{
+                            layer.msg(json.msg);
+                        }
+                    }
+                });
+            });
+        });
+        /*打开创建页面*/
+        function create(){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.created}'
+                ,area: ['500px', '500px']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Category/createProduct'
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+
+        /*打开编辑页面*/
+        function update(id){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.updated}'
+                ,area: ['500px', '500px']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Category/updateProduct/id/'+id
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+        /*关闭二级页面*/
+        function layer_back(){
+            layer.closeAll();
+            window.location.reload();
+        }
+    </script>
+</block>

@@ -1,0 +1,206 @@
+<extend name="Public/base"/>
+<block name="style">
+</block>
+<block name="scriptop"></block>
+<block name="body">
+    <fieldset class="layui-elem-field">
+        <legend>{$language.screen}</legend>
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="float:right;margin-right:25px;">
+                    <button class="layui-btn" onclick="create()" type="button">{$language.created}</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="layui-form">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="30">
+                <col width="30">
+                <col width="200">
+                <col width="200">
+                <col width="60">
+                <col width="10">
+                <col width="100">
+                <col width="100">
+            </colgroup>
+            <thead>
+            <tr>
+                <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox"></th>
+                <th>ID</th>
+                <th>{$language.Chinese-title}（{$language.English-title}）</th>
+                <th>{$language.Link-Address}</th>
+                <th>{$language.status}</th>
+                <th>{$language.sort}</th>
+                <th>{$language.Option-type}</th>
+                <th>{$language.operation}</th>
+            </tr>
+            </thead>
+            <tbody id="ajax_return">
+            <foreach name="data" item="vo" key="k">
+                <tr>
+                    <td class="check">
+                        <input name="checkid[]" lay-skin="primary" value="{$vo.id}" type="checkbox">
+                    </td>
+                    <td class="parentTd" id="{$vo.id}"><i class="layui-icon layui-icon-triangle-r"></i>{$vo.id}</td>
+                    <td>{$vo.title}（{$vo.english}）</td>
+                    <td>{$vo.url}</td>
+                    <td>
+                        <switch name="vo.status">
+                            <case value="activation"><input type="checkbox"  data-id="{$vo.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                            <default />	<input type="checkbox"  data-id="{$vo.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+                        </switch>
+                    </td>
+                    <td>{$vo.sort}</td>
+                    <td>
+                        <switch name="vo.type">
+                            <case value="select">{$language.drop-down}</case>
+                            <default />{$language.Title-Link}
+                        </switch>
+                    </td>
+                    <td><button class="layui-btn layui-btn-mini" style="background-color: #17a2b8;" onclick="update({$vo.id})">{$language.updated}</button></td>
+                </tr>
+                <foreach name="vo.child" item="val" key="k">
+                    <tr style="background-color: #C9C9C9;" hidden>
+                        <td class="check">
+                            <input name="checkid[]" lay-skin="primary" value="{$val.id}" type="checkbox">
+                        </td>
+                        <td>{$val.id}</td>
+                        <td class="childTd" pid="{$val.pid}">{$val.title}（{$val.english}）</td>
+                        <td>{$val.url}</td>
+                        <td>
+                            <switch name="vo.status">
+                                <case value="activation"><input type="checkbox"  data-id="{$val.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                                <default />	<input type="checkbox"  data-id="{$val.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+                            </switch>
+                        </td>
+                        <td>{$val.sort}</td>
+                        <td>
+                            <switch name="val.type">
+                                <case value="select">{$language.drop-down}</case>
+                                <default />{$language.Title-Link}
+                            </switch>
+                        </td>
+                        <td><button class="layui-btn layui-btn-mini" style="background-color: #17a2b8;" onclick="update({$val.id})">{$language.updated}</button></td>
+                    </tr>
+
+                </foreach>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form', 'laydate'], function(){
+            var $ = layui.jquery, form = layui.form;
+            $(".layui-table").find("td.parentTd").on("click", function () {
+                var idStr = $(this).prop("id");
+                var childTr = $(".layui-table").find("td.childTd");
+                console.log($(this).children(i).hasClass('layui-icon-triangle-r'))
+                if($(this).children(i).hasClass('layui-icon-triangle-r')){
+                    $(this).children('i').removeClass('layui-icon-triangle-r')
+                    $(this).children('i').addClass('layui-icon-triangle-d')
+                }else if($(this).children(i).hasClass('layui-icon-triangle-d')){
+                    $(this).children('i').addClass('layui-icon-triangle-r')
+                    $(this).children('i').removeClass('layui-icon-triangle-d')
+                }
+
+                for (var i = 0; i < childTr.length; i++) {
+                    if ($(childTr.eq(i)).attr("pid")) {
+                        if ($(childTr[i]).attr("pid") == idStr) {
+                            if ($(childTr[i]).parent("tr").css("display") == "none") {
+                                $(childTr[i]).parent("tr").show();
+                            } else {
+                                $(childTr[i]).parent("tr").hide();
+                            }
+                        }
+                    }
+                }
+            });
+            //全选
+            form.on('checkbox(allChoose)', function(data){
+                var child = $(data.elem).parents('table').find('tbody .check input[type="checkbox"]');
+                child.each(function(index, item){
+                    item.checked = data.elem.checked;
+                });
+                form.render('checkbox');
+            });
+
+            /*修改状态*/
+            form.on('switch(status)', function(obj){
+                layer.load(1);
+                var id = $(this).attr("data-id");
+                if(obj.elem.checked){
+                    var status = 'activation';
+                }else{
+                    var status = 'defaulted';
+                }
+                $.ajax({
+                    type: 'POST',
+                    url:'/admin.php/Menu/updateStatus',
+                    data:"id="+id+"&status="+status,// 你的formid
+                    dataType:'json',
+                    success: function(json){
+                        layer.closeAll('loading');
+                        if(json.rel==1){
+                            layer.msg(json.msg);
+                        }else{
+                            layer.msg(json.msg);
+                        }
+                    }
+                });
+            });
+
+        });
+
+        /*打开创建页面*/
+        function create(){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.created}'
+                ,area: ['500px', '500px']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Menu/createMenu'
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+
+        /*打开编辑页面*/
+        function update(id){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.updated}'
+                ,area: ['500px', '500px']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Menu/updateMenu/id/'+id
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+        /*关闭二级页面*/
+        function layer_back(){
+            layer.closeAll();
+        }
+    </script>
+</block>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/Public/Layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" id="form">
+    <blockquote class="layui-elem-quote">{$language.explain-red}<b style="color:#d70101">*</b>{$language.required-important}</blockquote>
+    <blockquote class="layui-elem-quote">{$language.english}{$language.title}{$language.not-repeat}</blockquote>
+    <div class="layui-col-md12">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.english}{$language.title}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-inline">
+                    <input name="module" placeholder="{$language.please-input}{$language.english}{$language.title}" value="" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.chinese}{$language.title}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-inline">
+                    <input name="title" placeholder="{$language.please-input}{$language.chinese}{$language.title}"  value="" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+            <div class="layui-block">
+                <label class="layui-form-label">{$language.jurisdiction}{$language.explain}：</label>
+                <div class="layui-input-block">
+                        <textarea  name="description" class="layui-textarea" placeholder="{$language.please-input}{$language.jurisdiction}{$language.explain}">
+                        </textarea>
+                </div>
+            </div>
+            <fieldset class="layui-elem-field">
+                <legend>{$language.select}{$language.jurisdiction}</legend>
+                <table class="layui-table" lay-size="sm">
+                    <colgroup>
+                        <col width="50">
+                        <col width="1200">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>{$language.parent-level}{$language.menu}</th>
+                        <th>{$language.child-level}{$language.select}</th>
+                    </tr>
+                    </thead>
+                    <tbody >
+                    <foreach name="menu" item="val" key="k">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="rules[]" lay-skin="primary" value="{$val.id}" id="{$val.id}" class="parent{$val.id}" title="{$val.title}" lay-filter="p_all"/>
+                            </td>
+                            <td>
+                                <volist name="val.child" id="vo">
+                                    <input type="checkbox" name="rules[]" lay-skin="primary" value="{$vo.id}" pid="{$vo.pid}" class="child{$vo.pid}" title="{$vo.title}" lay-filter="c_all"/>
+                                </volist>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </fieldset>
+
+        </div>
+    </div>
+</form>
+<script src="/Public/Layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
+
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form,
+                $ = layui.jquery;
+
+        form.on('checkbox(p_all)', function(obj){
+            var value = obj.value;
+            var checked = obj.elem.checked;
+            if (checked == true) {
+                $(".child"+value).prop("checked", true);
+                form.render('checkbox');
+            } else {
+                $(".child"+value).prop("checked", false);
+                form.render('checkbox');
+            }
+        })
+        form.on('checkbox(c_all)', function(obj){
+            var value = obj.elem.attributes.pid.value;
+            var checked = obj.elem.checked;
+            if (checked == true) {
+                var pChecked = $(".parent"+value).prop('checked');
+                if(pChecked == false){
+                    $(".parent"+value).prop("checked", true);
+                    form.render('checkbox');
+                }
+            }
+        })
+
+    });
+
+
+
+    function subData(){
+        $.ajax({
+            cache: true,
+            type: 'POST',
+            url:'/admin.php/Group/createGroupData',
+            data:$('#form').serialize(),// 你的formid
+            dataType:'json',
+            success: function(json){
+                if(json.rel==1){
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.define}'] //按钮
+                    }, function(){
+                        parent.window.layer_back();
+                    });
+                }else{
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.close}'] //按钮
+                    }, function(){
+                        parent.window.layer_back();
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

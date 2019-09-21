@@ -1,0 +1,53 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td class="check">
+            <input name="checkid[]" lay-skin="primary" value="{$vo.id}" type="checkbox">
+        </td>
+        <td>{$vo.id}</td>
+        <td>{$vo.title}（{$vo.english}）</td>
+        <td>{$vo.url}</td>
+        <td>
+            <switch name="vo.status">
+                <case value="activation"><input type="checkbox"  data-id="{$vo.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                <default />	<input type="checkbox"  data-id="{$vo.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+            </switch>
+        </td>
+        <td>{$vo.sort}</td>
+        <td>
+            <switch name="vo.type">
+                <case value="select">{$language.drop-down}</case>
+                <default />{$language.Title-Link}
+            </switch>
+        </td>
+        <td><button class="layui-btn layui-btn-mini" style="background-color: #17a2b8;" onclick="update({$vo.id})">{$language.updated}</button></td>
+    </tr>
+    <foreach name="vo.child" item="val" key="k">
+        <tr style="background-color: #C9C9C9">
+            <td class="check">
+                <input name="checkid[]" lay-skin="primary" value="{$val.id}" type="checkbox">
+            </td>
+            <td>{$val.id}</td>
+            <td>{$val.title}（{$val.english}）</td>
+            <td>{$val.url}</td>
+            <td>
+                <switch name="vo.status">
+                    <case value="activation"><input type="checkbox"  data-id="{$val.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                    <default />	<input type="checkbox"  data-id="{$val.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+                </switch>
+            </td>
+            <td>{$val.sort}</td>
+            <td>
+                <switch name="val.type">
+                    <case value="select">{$language.drop-down}</case>
+                    <default />{$language.Title-Link}
+                </switch>
+            </td>
+            <td><button class="layui-btn layui-btn-mini" style="background-color: #17a2b8;" onclick="update({$val.id})">{$language.updated}</button></td>
+        </tr>
+
+    </foreach>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+</script>

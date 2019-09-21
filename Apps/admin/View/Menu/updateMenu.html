@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/Public/Layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" id="form">
+
+    <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">{$language.explain-red}<b style="color:#d70101">*</b>{$language.required-important}</blockquote>
+        <input name="id"  value="{$info.id}" autocomplete="off" class="layui-input" type="hidden">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.Link-level}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-inline">
+                    <select name="pid" lay-search="">
+                        <option value="0">{$language.Top-level-links}</option>
+                        <volist name="data" id="val">
+                            <switch name="val.id">
+                                <case value="$info.pid"><option value="{$val.id}" selected >{$val.title}</option></case>
+                                <default /><option value="{$val.id}" >{$val.title}</option>
+                            </switch>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.Chinese-title}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <input name="title" placeholder="{$language.please-input-Chinese-title}" value="{$info.title}" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.English-title}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <input name="english" placeholder="{$language.please-input-English-title}" value="{$info.english}" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.Link-Address}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <input name="url" placeholder="{$language.please-input-Link-Address}" value="{$info.url}" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.icon-class}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <input name="icon" placeholder="{$language.please-input}class" value="{$info.icon}" autocomplete="off" class="layui-input" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.Option-type}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-inline">
+                    <select name="type" lay-search="">
+                        <switch name="info.type">
+                            <case value="select"><option value="select" selected>{$language.drop-down}</option><option value="head">{$language.Title-Link}</option></case>
+                            <default />	<option value="select">{$language.drop-down}</option><option value="head" selected>{$language.Title-Link}</option>
+                        </switch>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.sort}：</label>
+                <div class="layui-input-block">
+                    <input name="sort" placeholder="{$language.sort}" value="{$info.sort}" autocomplete="off" class="layui-input" type="number" lay-verify="number">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{$language.status}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-inline">
+                    <select name="status" lay-search="">
+                        <switch name="info.status">
+                            <case value="activation"><option value="activation" selected>{$language.activation}</option><option value="defaulted">{$language.defaulted}</option></case>
+                            <default />	<option value="activation">{$language.activation}</option><option value="defaulted" selected>{$language.defaulted}</option>
+                        </switch>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="/Public/Layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
+<script>
+    layui.use(['form'], function(){});
+</script>
+<script>
+    function subData(){
+        $.ajax({
+            cache: true,
+            type: 'POST',
+            url:'/admin.php/Menu/updateMenuData',
+            data:$('#form').serialize(),// 你的formid
+            dataType:'json',
+            success: function(json){
+                console.log(json)
+                if(json.rel==1){
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.define}'] //按钮
+                    }, function(){
+                        parent.window.layer_back();
+                    });
+                }else{
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.close}'] //按钮
+                    }, function(){
+                        parent.window.layer_back();
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

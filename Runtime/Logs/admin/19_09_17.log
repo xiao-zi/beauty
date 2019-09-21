@@ -1,0 +1,144 @@
+[ 2019-09-17T15:47:49+08:00 ] 192.168.0.123 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009223s ]
+NOTIC: [8] Undefined index: Login D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 18 行.
+
+[ 2019-09-17T15:47:49+08:00 ] 192.168.0.123 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+NOTIC: [8] Undefined index: Login D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 18 行.
+
+[ 2019-09-17T15:47:50+08:00 ] 192.168.0.123 /admin.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001286s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.018318s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.018379s ]
+NOTIC: [8] Undefined index: rel D:\phpStudy\WWW\beauty\Runtime\Cache\admin\760f0862255b83511df50c2ce3dc0548.php 第 12 行.
+NOTIC: [8] Undefined index: msg D:\phpStudy\WWW\beauty\Runtime\Cache\admin\760f0862255b83511df50c2ce3dc0548.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009750s ]
+
+[ 2019-09-17T15:48:03+08:00 ] 192.168.0.123 /admin.php/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.1512s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0413s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `admin_user` WHERE `username` = 'admin ' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0121s ]
+SQL: UPDATE `admin_user` SET `login_time`='2019-09-17 15:48:03',`login_ip`='192.168.0.123' WHERE `id` = 1 [ RunTime:0.0592s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Common\function.php 第 241 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003086s ]
+
+[ 2019-09-17T15:48:03+08:00 ] 192.168.0.123 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001501s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0451s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0435s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\IndexController.class.php 第 24 行.
+SQL: SELECT `id`,`pid`,`title`,`url`,`node_url`,`type`,`icon`,`sort` FROM `admin_menu` ORDER BY sort  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\beauty\Runtime\Cache\admin\0bab864758c85013c0e86abcee8f0573.php 第 290 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000989s ]
+
+[ 2019-09-17T15:48:04+08:00 ] 192.168.0.123 /admin.php/Menu/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.1650s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.1626s ]
+SQL: SELECT * FROM `admin_menu` ORDER BY sort asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\beauty\Runtime\Cache\admin\6587dc8da2fd612f982eb0bbb8f707aa.php 第 73 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001184s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001260s ]
+
+[ 2019-09-17T15:48:14+08:00 ] 192.168.0.123 /admin.php/Menu/updateMenu/id/10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_menu` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`english` FROM `admin_menu` WHERE `pid` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000857s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+

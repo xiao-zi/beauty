@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/Public/Layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/Public/Admin/css/User/user.css">
+    <link rel="stylesheet" href="/Public/Layui/css/template.css">
+</head>
+<body>
+    <form class="layui-form" id="form">
+        <blockquote class="layui-elem-quote">{$language.explain-red}<b style="color:#d70101">*</b>{$language.required-important}</blockquote>
+        <input type="hidden"  name="id" value="{$data.id}"/>
+        <div class="layui-col-md8">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.nickname}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <input name="username" placeholder="{$language.nickname}"  value="{$data.username}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.sex}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="sex" lay-search="">
+                            <switch name="data.sex">
+                                <case value="male"><option value="male" selected>{$language.male}</option><option value="female">{$language.female}</option></case>
+                                <default />	<option value="male" >{$language.male}</option><option value="female" selected>{$language.female}</option>
+                            </switch>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.phoneCode}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="phoneCode" lay-search="">
+                            <switch name="data.phonecode">
+                                <case value="86"><option value="86" selected>86({$language.China})</option></case>
+                                <default /><option value="86">86({$language.China})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="1"><option value="1" selected>1({$language.American})</option></case>
+                                <default /> <option value="1">1({$language.American})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="886"><option value="886" selected>886({$language.Taiwan})</option></case>
+                                <default /><option value="886">886({$language.Taiwan})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="1"><option value="1" selected>1({$language.Canada})</option></case>
+                                <default /><option value="1">1({$language.Canada})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="850"><option value="850" selected>850({$language.HongKong})</option></case>
+                                <default /><option value="850">850({$language.HongKong})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="852"><option value="852" selected>852({$language.Macao})</option></case>
+                                <default /> <option value="852">852({$language.Macao})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="61"><option value="61" selected>61({$language.Australia})</option></case>
+                                <default /><option value="61">61({$language.Australia})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="64"><option value="64" selected>64({$language.NewZealand})</option></case>
+                                <default /><option value="64">64({$language.NewZealand})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="44"><option value="44" selected>44({$language.Britain})</option></case>
+                                <default /><option value="44">44({$language.Britain})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="34"><option value="34" selected>34({$language.Spain})</option></case>
+                                <default /><option value="34">34({$language.Spain})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="39"><option value="39" selected>39({$language.Italy})</option></case>
+                                <default /><option value="39">39({$language.Italy})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="33"><option value="33" selected>33({$language.France})</option></case>
+                                <default /><option value="33">33({$language.France})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="49"><option value="49" selected>49({$language.Germany})</option></case>
+                                <default /><option value="49">49({$language.Germany})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="32"><option value="32" selected>32({$language.Belgium})</option></case>
+                                <default /><option value="32">32({$language.Belgium})</option>
+                            </switch>
+                            <switch name="data.phonecode">
+                                <case value="41"><option value="41" selected>41({$language.Switzerland})</option></case>
+                                <default /><option value="41">41({$language.Switzerland})</option>
+                            </switch>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.phone}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <input name="phone" placeholder="{$language.phone}" value="{$data.phone}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.email}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <input name="email" placeholder="{$language.email}"  value="{$data.email}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.birth}：</label>
+                    <div class="layui-input-inline">
+                        <input name="birth" id="birth" placeholder="{$language.birth}"  value="{$data.birth}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.ActivityLevel}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="ActivityLevel" lay-search="">
+                            <switch name="data.activitylevel">
+                                <case value="active"><option value="active" selected>{$language.active}</option></case>
+                                <default /><option value="active">{$language.active}</option>
+                            </switch>
+                            <switch name="data.activitylevel">
+                                <case value="inactive"><option value="inactive" selected>{$language.inactive}</option></case>
+                                <default /><option value="inactive">{$language.inactive}</option>
+                            </switch>
+                            <switch name="data.activitylevel">
+                                <case value="masked"><option value="masked" selected>{$language.masked}</option></case>
+                                <default /><option value="masked">{$language.masked}</option>
+                            </switch>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.source}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="source" lay-search="">
+                            <volist name="source" id="val">
+                                <switch name="data.source">
+                                    <case value="$val.id"><option value="{$val.id}" selected>{$val.title}</option></case>
+                                    <default /><option value="{$val.id}">{$val.title}</option>
+                                </switch>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.country}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="country" lay-search="">
+                            <volist name="country" id="val">
+                                <switch name="data.country">
+                                    <case value="$val.id"><option value="{$val.id}" selected>{$val.title}</option></case>
+                                    <default /><option value="{$val.id}">{$val.title}</option>
+                                </switch>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$language.CustomerCategory}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="type" lay-search="">
+                            <volist name="type" id="val">
+                                <switch name="data.type">
+                                    <case value="$val.id"><option value="{$val.id}" selected>{$val.title}</option></case>
+                                    <default /><option value="{$val.id}">{$val.title}</option>
+                                </switch>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.Personal-profile}</label>
+                    <div class="layui-input-block">
+                        <textarea  name="describe" class="layui-textarea" placeholder="{$language.Personal-profile}">{$data.describe}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="/Public/Layui/layui.js" type="text/javascript" charset="utf-8"></script>
+   <script type="text/javascript" src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
+   <script>
+        layui.use(['form','laydate','layer'], function(){
+            var layer = layui.layer,laydate = layui.laydate;
+            //日期
+            laydate.render({
+                elem: '#birth',
+                type: 'date',
+                trigger: 'click'
+            });
+        });
+   </script>
+    <script>
+        function subData(){
+            $.ajax({
+                cache: true,
+                type: 'POST',
+                url:'/admin.php/Customer/updateCustomerData',
+                data:$('#form').serialize(),// 你的formid
+                dataType:'json',
+                success: function(json){
+                    if(json.rel==1){
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.define}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }else{
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.close}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

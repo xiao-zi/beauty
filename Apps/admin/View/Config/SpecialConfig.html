@@ -1,0 +1,152 @@
+<extend name="Public/base"/>
+<block name="style">
+    <style>
+        .layui-col-space10 {
+            margin: 18px;
+        }
+        .layui-card {
+            margin-bottom: 15px;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(105,99,99,0.5);
+        }
+    </style>
+</block>
+<block name="scriptop"></block>
+<block name="body">
+    <!--左边-->
+    <form class="layui-form" id="form" action="">
+        <div class="layui-col-md8">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-card">
+                    <div class="layui-card-header">{$language.Default-picture}</div>
+                    <div class="layui-card-body">
+                        <div class="layui-row layui-col-space10">
+                            <div class="layui-upload">
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" name="IMAGE"  id="demo2" src="{$config.IMAGE}">
+                                </div>
+                                <input name="IMAGE" id="url2"   value="{$config.IMAGE}" autocomplete="off" class="layui-input" type="hidden">
+                                <button type="button"   class="layui-btn" id="test2">{$language.Upload-default-images}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">{$language.Website-logo}</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space10">
+                        <div class="layui-upload">
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="demo1"   src="{$config.WEBSITE-LOG}">
+                            </div>
+                            <input name="WEBSITE-LOG" id="url1"    value="{$config.WEBSITE-LOG}" autocomplete="off" class="layui-input" type="hidden">
+                            <button type="button"  class="layui-btn" id="test1">{$language.Upload-website-LOGO}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">{$language.Time-Zone-Selection}</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space10">
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width: 140px;">{$language.Time-Zone-Selection}</label>
+                                <div class="layui-input-inline">
+                                    <select name="WEBSITE-TIME-ZONE" lay-verify="required"  lay-search="">
+                                        <switch name="config.WEBSITE-TIME-ZONE">
+                                            <case value="Asia/Shanghai"><option value="Asia/Shanghai" selected>{$language.Chinese-time}</option><option value="America/New_York">{$language.America-time}</option></case>
+                                            <default /><option value="Asia/Shanghai">{$language.Chinese-time}</option><option value="America/New_York" selected>{$language.America-time}</option>
+                                        </switch>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item layui-layout-admin">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;text-align: center;">
+                    <a class="layui-btn" onclick="subData()"><i class="layui-icon">&#xe605;</i>{$language.Submission} </a>
+                    <!--<button type="reset" class="layui-btn layui-btn-primary"><i class="layui-icon">&#x1006;</i>{$language.Reset}</button>-->
+                </div>
+            </div>
+        </div>
+    </form>
+</block>
+<block name="script">
+    <script>
+        layui.use(['form','element','upload'], function(){
+            var $ = layui.jquery,form = layui.form
+                    ,element = layui.element,//Tab的切换功能，切换事件监听等，需要依赖element模块
+                    upload = layui.upload;//上传图片
+            //普通图片上传
+            var uploadInst = upload.render({
+                elem: '#test1'
+                ,url: '/admin.php/Config/handleUpload'
+                ,done: function(json){
+                    if(json.code == 0){
+                        layer.msg(json.msg, {icon: 6});
+                        $('#demo1').attr('src', json.src); //图片链接（base64）
+                        $('#url1').val(json.src)
+                    }else{
+                        layer.msg(json.msg, {icon: 5});
+                    }
+                }
+            });
+            var uploadInst1 = upload.render({
+                elem: '#test2'
+                ,url: '/admin.php/Config/handleUpload'
+                ,done: function(json){
+                    if(json.code == 0){
+                        layer.msg(json.msg, {icon: 6});
+                        $('#demo2').attr('src', json.src); //图片链接（base64）
+                        $('#url2').val(json.src)
+                    }else{
+                        layer.msg(json.msg, {icon: 5});
+                    }
+                }
+            });
+        });
+        /*关闭二级页面*/
+        function layer_back(){
+            layer.closeAll();
+        }
+    </script>
+    <script>
+        function subData(){
+            $.ajax({
+                cache: true,
+                type: 'post',
+                url:'/admin.php/Config/SpecialConfigData',
+                data:$('#form').serialize(),// 你的formid
+                dataType:'json',
+                success: function(json){
+                    if(json.rel==1){
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.define}'] //按钮
+                        }, function(){
+                            layer_back();
+                        });
+                    }else{
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.close}'] //按钮
+                        }, function(){
+                            layer_back();
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</block>

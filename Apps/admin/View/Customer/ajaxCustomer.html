@@ -1,0 +1,65 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td>
+            <input name="checkid[]" lay-skin="primary" value="{$vo.id}" type="checkbox">
+        </td>
+        <td>{$vo.cartnum}</td>
+        <td>{$vo.username}</td>
+        <td>({$vo.phonecode}){$vo.phone}</td>
+        <td>{$vo.email}</td>
+        <td>
+            <switch name="vo.sex">
+                <case value="male">{$language.male}</case>
+                <default />	{$language.female}
+            </switch>
+        </td>
+        <td>{$vo.birth}</td>
+        <td>
+            <switch name="vo.activitylevel">
+                <case value="active">{$language.active}</case>
+                <case value="inactive">{$language.inactive}</case>
+                <default />	{$language.masked}
+            </switch>
+        </td>
+        <td>{$vo.register_time}</td>
+        <td>
+            <ul class="pullDown-nav">
+                <li class="pullDown-nav-item">
+                    <a href="javascript:;">{$language.operation}</a>
+                    <dl class="pullDown-nav-child">
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="update({$vo.id})">{$language.updated}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="userLogin({$vo.id})">{$language.See-details}</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+    $(function () {
+        $(".layui-table tr td").find(".pullDown-nav").find("li.pullDown-nav-item").hover(function () {
+            if (!$(this).hasClass("pullDown-this")) {
+                $(this).addClass("pullDown-this").parent().parent().parent().siblings().find(
+                        ".pullDown-nav").find("li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).find("dl.pullDown-nav-child").css("display", "block");
+                $(this).parent().parent().parent().siblings().find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+                leavePullDownMenu();
+            }
+        },function(){
+            $(this).addClass("pullDown-this").removeClass("pullDown-this");
+            $(this).find(".pullDown-nav").find("dl.pullDown-nav-child").css("display", "none");
+        });
+
+        function leavePullDownMenu() {
+            $("dl.pullDown-nav-child").on('mouseleave', function () {
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+            })
+        }
+    });
+</script>

@@ -1,0 +1,30 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td>
+            <input name="checkid[]" lay-skin="primary" value="{$vo.id}" type="checkbox">
+        </td>
+        <td>{$vo.cartnum}</td>
+        <td>{$vo.username}</td>
+        <td>({$vo.phonecode}){$vo.phone}</td>
+        <td>{$vo.email}</td>
+        <td>
+            <switch name="vo.sex">
+                <case value="male">{$language.male}</case>
+                <default />	{$language.female}
+            </switch>
+        </td>
+        <td>{$vo.birth}</td>
+        <td>
+            <switch name="vo.activitylevel">
+                <case value="active">{$language.active}</case>
+                <case value="inactive">{$language.inactive}</case>
+                <default />	{$language.masked}
+            </switch>
+        </td>
+        <td>{$vo.register_time}</td>
+    </tr>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+</script>

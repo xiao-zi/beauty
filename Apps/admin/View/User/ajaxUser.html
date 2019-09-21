@@ -1,0 +1,60 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td><img src="{$vo.image}" style="width: 100%;height: auto;"/></td>
+        <td>{$vo.username}</td>
+        <td>{$vo.realname}</td>
+        <td>{$vo.phone}</td>
+        <td>{$vo.email}</td>
+        <td>
+            <switch name="vo.status">
+                <case value="activation"><input type="checkbox"  data-id="{$vo.id}" lay-skin="switch"  lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status" checked ></case>
+                <default />	<input type="checkbox"  data-id="{$vo.id}" lay-skin="switch" lay-text="{$language.activation}|{$language.defaulted}" lay-filter="status"  >
+            </switch>
+        </td>
+        <td>{$vo.groups}</td>
+        <td>{$vo.login_time}</td>
+        <td>
+            <ul class="pullDown-nav">
+                <li class="pullDown-nav-item">
+                    <a href="javascript:;">{$language.operation}</a>
+                    <dl class="pullDown-nav-child">
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="update({$vo.id})">{$language.updated}{$language.account}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="userLogin({$vo.id})">{$language.login}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: red" onclick="changePassword({$vo.id})">{$language.updated}{$language.password}</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <!--<button class="layui-btn layui-btn-sm" onclick="update({$vo.id})">{$language.updated}{$language.account}</button>-->
+            <!--<button class="layui-btn layui-btn-sm" onclick="userLogin({$vo.id})">{$language.login}</button>-->
+            <!--<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="changePassword({$vo.id})">{$language.updated}{$language.password}</button>-->
+        </td>
+    </tr>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+    $(function () {
+        $(".layui-table tr td").find(".pullDown-nav").find("li.pullDown-nav-item").hover(function () {
+            if (!$(this).hasClass("pullDown-this")) {
+                $(this).addClass("pullDown-this").parent().parent().parent().siblings().find(
+                        ".pullDown-nav").find("li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).find("dl.pullDown-nav-child").css("display", "block");
+                $(this).parent().parent().parent().siblings().find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+                leavePullDownMenu();
+            }
+        },function(){
+            $(this).addClass("pullDown-this").removeClass("pullDown-this");
+            $(this).find(".pullDown-nav").find("dl.pullDown-nav-child").css("display", "none");
+        });
+
+        function leavePullDownMenu() {
+            $("dl.pullDown-nav-child").on('mouseleave', function () {
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+            })
+        }
+    });
+</script>

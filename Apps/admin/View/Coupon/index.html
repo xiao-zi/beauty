@@ -1,0 +1,209 @@
+<extend name="Public/base"/>
+<block name="style">
+    <link rel="stylesheet" href="/Public/Admin/css/User/drop-down.css" media="all">
+</block>
+<block name="scriptop">
+</block>
+<block name="body">
+    <fieldset class="layui-elem-field">
+        <legend>{$language.screen}</legend>
+        <div class="layui-field-box">
+            <form class="layui-form" method="post" name="search-form2" id="search-form2">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.status}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="status" lay-search="">
+                                <option value="">{$language.status}</option>
+                                <option value="1">{$language.available}</option>
+                                <option value="2">{$language.Be-overdue}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.keywords}：</label>
+                        <div class="layui-input-inline" style="width: 300px;">
+                            <input name="keywords"  placeholder="{$language.keywords}" class="layui-input" type="text" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="float:right;margin-right:25px;">
+                        <button class="layui-btn" onclick="ajax_get_table('search-form2',1,true)" type="button">{$language.search}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </fieldset>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>{$language.Coupon-List-Management}</legend>
+    </fieldset>
+    <fieldset class="layui-elem-field">
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="float:right;margin-right:25px;">
+                    <button class="layui-btn" onclick="create()" type="button">{$language.created}</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="layui-form">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="100">
+                <col width="100">
+                <col width="50">
+                <col width="200">
+                <col width="100">
+                <col width="100">
+                <col width="50">
+                <col width="100">
+                <col width="100">
+                <col width="100">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>{$language.picture}</th>
+                <th>{$language.title}</th>
+                <th>{$language.Preferential-mode}</th>
+                <th>{$language.Coupon-Rules}</th>
+                <th>{$language.start-time}</th>
+                <th>{$language.end-time}</th>
+                <th>{$language.Number-Releases}</th>
+                <th>{$language.Number-Use}</th>
+                <th>{$language.Entry-time}</th>
+                <th>{$language.operation}</th>
+            </tr>
+            </thead>
+            <tbody id="ajax_return">
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form', 'laydate','element'], function(){
+            var $ = layui.jquery, form = layui.form, element = layui.element,laydate = layui.laydate;
+             //全选
+            form.on('checkbox(allChoose)', function(data){
+
+                var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]');
+                child.each(function(index, item){
+                    item.checked = data.elem.checked;
+                });
+                form.render('checkbox');
+            });
+
+            //日期
+            laydate.render({
+                elem: '#birth',
+                type: 'date'
+            });
+        });
+
+        /*打开创建页面*/
+        function create(){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.created}'
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_frame1'
+                ,content: '/admin.php/Coupon/createCoupon'
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_frame1").children("iframe").attr("id");
+                    window.frames[iframe].createCoupon();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+        /*打开编辑页面*/
+        function update(id){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.updated}'
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'updateCoupon'
+                ,content: '/admin.php/Coupon/updateCoupon/id/'+id
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#updateCoupon").children("iframe").attr("id");
+                    window.frames[iframe].updateCoupon();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+        //删除优惠券
+        function delCoupon(id){
+            layer.confirm('{$language.delete-information}', {
+                btn: ['{$language.define}','{$language.close}'] //按钮
+            }, function(){
+                $.getJSON('/admin.php/Coupon/deleteCoupon',{'id':id,},function(json){
+                    if(json.rel == 1){
+                        $('tr#'+id).remove();
+                        layer.msg("{$language.Successful-deletion}", {icon: 1});
+                    }else{
+                        layer.msg("{$language.Delete-failed}", {icon: 2});
+                    }
+                });
+            }, function(){
+                layer.msg("{$language.cancelled-operation}", {icon: 1});
+            });
+        }
+        /*关闭二级页面*/
+        function layer_back(){
+            layer.closeAll();
+        }
+    </script>
+    <!--搜索功能-->
+    <script type="text/javascript">
+        window.onload=function(){
+            ajax_get_table('search-form2',1,true);
+        }
+        function ajax_get_table(tab,page,flag){
+            $.ajax({
+                type : "POST",
+                url:"/admin.php/Coupon/ajaxCoupon/p/"+page,//+tab,
+                data : $('#'+tab).serialize(),// 你的formid
+                success: function(data){
+                    layer.msg('{$language.waiting-for-queries}...', {
+                        icon: 1,   // 成功图标
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){ // 关闭后执行的函数
+                        $("#ajax_return").html('');
+                        $("#ajax_return").append(data.html);
+                        if(flag){
+                            layui.use(['laypage', 'layer'], function(){
+                                var laypage = layui.laypage
+                                        ,layer = layui.layer;
+                                var num = data.pagenum;
+                                var pages = data.pages;
+                                //调用分页
+                                laypage.render({
+                                    elem: 'demo7'
+                                    ,count: num
+                                    ,limit:pages
+                                    ,layout: ['count', 'prev', 'page', 'next', 'skip']
+                                    ,jump: function(obj){
+                                        var page_num = obj.curr;
+                                        ajax_get_table('search-form2',page_num,false);
+                                    }
+                                });
+                            });
+                        }
+                    });
+
+                }
+            });
+        }
+    </script>
+</block>

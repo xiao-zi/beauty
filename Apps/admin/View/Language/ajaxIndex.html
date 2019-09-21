@@ -1,0 +1,17 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.model}</td>
+        <td>{$vo.chinese}</td>
+        <td>{$vo.english}</td>
+        <td>{$vo.create_time}</td>
+        <td>{$vo.update_time}</td>
+        <td>
+            <button class="layui-btn layui-btn-sm" onclick="update({$vo.id})">{$language.updated}</button>
+        </td>
+    </tr>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+</script>

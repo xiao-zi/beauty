@@ -1,0 +1,214 @@
+<extend name="Public/base"/>
+<block name="style">
+    <link rel="stylesheet" href="/Public/Admin/css/User/drop-down.css" media="all">
+</block>
+<block name="scriptop">
+</block>
+<block name="body">
+    <fieldset class="layui-elem-field">
+        <legend>{$language.screen}</legend>
+        <div class="layui-field-box">
+            <form class="layui-form" method="post" name="search-form2" id="search-form2">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.status}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="status" lay-search="">
+                                <option value="">{$language.status}</option>
+                                <option value="0">{$language.not-sent}</option>
+                                <option value="1">{$language.has-been-sent}</option>
+                                <option value="2">{$language.fill-in-sent}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.sender}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="aid" lay-search="">
+                                <option value="">{$language.sender}</option>
+                                <volist name="userGroup" id="val">
+                                    <option value="{$val.id}">{$val.realname}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.Receiver}：</label>
+                        <div class="layui-input-inline">
+                            <select name="cid" lay-search="">
+                                <option value="">{$language.Receiver}</option>
+                                <volist name="customerGroup" id="val">
+                                    <option value="{$val.id}">{$val.username}（{$val.cartnum}）</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.start-time}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <input name="start" autocomplete="off" id="start" class="layui-input" type="text">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.end-time}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <input name="end" autocomplete="off" id="end" class="layui-input" type="text">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.email}：</label>
+                        <div class="layui-input-inline" style="width: 300px;">
+                            <input name="keywords"  placeholder="{$language.email}" class="layui-input" type="text" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="float:right;margin-right:25px;">
+                        <button class="layui-btn" onclick="ajax_get_table('search-form2',1,true)" type="button">{$language.search}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </fieldset>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>{$language.Mailbox-menu-management}</legend>
+    </fieldset>
+    <div class="layui-form">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="5">
+                <col width="5">
+                <col width="80">
+                <col width="50">
+                <col width="50">
+                <col width="50">
+                <col width="100">
+                <col width="100">
+            </colgroup>
+            <thead>
+            <tr>
+                <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox"></th>
+                <th>{$language.id}</th>
+                <th>{$language.sender}</th>
+                <th>{$language.email}</th>
+                <th>{$language.Receiver}</th>
+                <th>{$language.status}</th>
+                <th>{$language.Entry-time}</th>
+                <th>{$language.operation}</th>
+            </tr>
+            </thead>
+            <tbody id="ajax_return">
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form', 'laydate','element'], function(){
+            var $ = layui.jquery, form = layui.form, element = layui.element,laydate = layui.laydate;
+             //全选
+            form.on('checkbox(allChoose)', function(data){
+
+                var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]');
+                child.each(function(index, item){
+                    item.checked = data.elem.checked;
+                });
+                form.render('checkbox');
+            });
+
+            //日期
+            laydate.render({
+                elem: '#start',
+                type: 'date'
+            });
+            laydate.render({
+                elem: '#end',
+                type: 'date'
+            });
+        });
+    </script>
+    <script>
+        //重新发送
+        function sendMail(id){
+            $.getJSON('__CONTROLLER__/mailResend',{'id':id},function(json){
+                if(json.rel== 1){
+                    layer.msg(json.msg, {
+                        icon: 1,   // 成功图标
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    },function(){ // 关闭后执行的函数
+                        location.reload(true);
+                    });
+                }else{
+                    layer.msg(json.msg, {
+                        icon: 2,   // 成功图标
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    },function(){ // 关闭后执行的函数
+                        location.reload(true);
+                    });
+                }
+            });
+        }
+        //短信内容展示
+        function showDetail(id){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: false
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Promotion/showMail?id='+id
+                ,btn: ['{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+    </script>
+
+    <!--搜索功能-->
+    <script type="text/javascript">
+        window.onload=function(){
+            ajax_get_table('search-form2',1,true);
+        }
+        function ajax_get_table(tab,page,flag){
+            $.ajax({
+                type : "POST",
+                url:"/admin.php/Promotion/ajaxMail/p/"+page,//+tab,
+                data : $('#'+tab).serialize(),// 你的formid
+                success: function(data){
+                    layer.msg('{$language.waiting-for-queries}...', {
+                        icon: 1,   // 成功图标
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function(){ // 关闭后执行的函数
+                        $("#ajax_return").html('');
+                        $("#ajax_return").append(data.html);
+                    });
+                    if(flag){
+                        layui.use(['laypage', 'layer'], function(){
+                            var laypage = layui.laypage
+                                    ,layer = layui.layer;
+                            var num = data.pagenum;
+                            var pages = data.pages;
+                            //调用分页
+                            laypage.render({
+                                elem: 'demo7'
+                                ,count: num
+                                ,limit:pages
+                                ,layout: ['count', 'prev', 'page', 'next', 'skip']
+                                ,jump: function(obj){
+                                    var page_num = obj.curr;
+                                    ajax_get_table('search-form2',page_num,false);
+                                }
+                            });
+
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</block>

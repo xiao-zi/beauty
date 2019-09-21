@@ -1,0 +1,183 @@
+[ 2019-09-20T07:56:48+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.130421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014297s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.1062s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.1132s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0958s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.3814s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.2812s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.065965s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.066021s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.215897s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.215950s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.579863s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.579911s ]
+
+[ 2019-09-20T07:56:48+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0071s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.1373s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009104s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009168s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+
+[ 2019-09-20T07:56:57+08:00 ] 192.168.0.123 /admin.php/Customer/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.4147s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0915s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.352351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.352393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000529s ]
+
+[ 2019-09-20T07:56:59+08:00 ] 192.168.0.123 /admin.php/Customer/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.2287s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0112s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006112s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000409s ]
+
+[ 2019-09-20T07:57:01+08:00 ] 192.168.0.123 /admin.php/Language/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052809s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052873s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013874s ]
+
+[ 2019-09-20T07:57:01+08:00 ] 192.168.0.123 /admin.php/Language/ajaxIndex/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `admin_language` [ RunTime:0.2318s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_language` LIMIT 1   [ RunTime:0.0685s ]
+SQL: SELECT * FROM `admin_language` ORDER BY id asc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059693s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000505s ]
+
+[ 2019-09-20T07:57:01+08:00 ] 192.168.0.123 /admin.php/Language/ajaxIndex/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0127s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: language D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `admin_language` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_language` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_language` ORDER BY id asc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000449s ]
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/Public/Layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" id="form">
+
+    <div class="layui-tab-item layui-show">
+        <blockquote class="layui-elem-quote">{$language.explain-red}<b style="color:#d70101">*</b>{$language.required-important}</blockquote>
+        <input name="data[type]" value="1" autocomplete="off" class="layui-input" type="hidden">
+        <div class="layui-col-md8">
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.chinese}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block">
+                        <input name="data[chinese]" placeholder="{$language.chinese}" value="{$product.chinese}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.english}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block">
+                        <input name="data[english]"  placeholder="{$language.english}" value="{$product.english}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.chinese-detail}：</label>
+                    <div class="layui-input-block">
+                        <textarea  name="data[chinese_describe]" id="chinese"  class="layui-textarea" lay-verify="chinese" placeholder="{$language.content}"> {$product.chinese_describe}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.english-detail}：</label>
+                    <div class="layui-input-block">
+                        <textarea  name="data[english_describe]" id="english"  class="layui-textarea" placeholder="{$language.content}">{$product.english_describe}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.status}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-inline">
+                        <select name="data[status]" lay-search="">
+                            <switch name="product.status">
+                                <case value="activation"><option value="activation" selected>{$language.activation}</option><option value="defaulted">{$language.defaulted}</option></case>
+                                <default />	<option value="activation">{$language.activation}</option><option value="defaulted" selected>{$language.defaulted}</option>
+                            </switch>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.Product-Classification}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block" >
+                        <select name="data[category]" lay-search="">
+                            <volist name="categories" id="val">
+                                <option value="{$val.id}">{$val.chinese}({$val.english})</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.price}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block" >
+                        <input name="data[price]" id="price" placeholder="{$language.price}" value="{$product.price}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.discount}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block" >
+                        <input name="data[discount]" id="discount"  placeholder="{$language.discount}" value="{$product.discount}" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="/Public/Layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
+
+<script>
+    layui.use(['form','laydate','layer','layedit'], function(){
+        var layer = layui.layer,form = layui.form;
+        var layedit = layui.layedit;
+        var chinese = layedit.build('chinese'); //建立编辑器
+        var english = layedit.build('english'); //建立编辑器
+        localStorage.setItem('chinese',chinese);
+        localStorage.setItem('english',english);
+    });
+    function subData(id){
+        layui.use(['layedit'], function(){
+            var layedit = layui.layedit;
+            var chinese=localStorage.getItem('chinese');
+            var english=localStorage.getItem('english');
+            var content1=layedit.getContent(chinese);
+            var content2=layedit.getContent(english);
+            $('#chinese').val(content1);
+            $('#english').val(content2);
+            $.ajax({
+                type: 'POST',
+                url:'/admin.php/Product/updateProductData?id='+id,
+                data:$('#form').serialize(),// 你的formid
+                dataType:'json',
+                success: function(json){
+                    if(json.rel==1){
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.define}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }else{
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.close}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }
+                }
+            });
+        });
+
+    }
+
+</script>
+<!--价钱验证规则-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        bindKeyEvent($("#price"));
+        bindDiscountEvent($("#discount"));
+    });
+    function bindKeyEvent(obj){
+        obj.keyup(function () {
+            var reg = $(this).val().match(/\d+\.?\d{0,2}/);
+            var txt = '';
+            if (reg != null) {
+                txt = reg[0];
+            }
+            $(this).val(txt);
+        }).change(function () {
+            $(this).keypress();
+            var v = $(this).val();
+            if (/\.$/.test(v))
+            {
+                $(this).val(v.substr(0, v.length - 1));
+            }
+        });
+    }
+    function bindDiscountEvent(obj){
+        obj.keyup(function () {
+            var reg = $(this).val().match(/^\d{0,2}$/);
+            var txt = '';
+            if (reg != null) {
+                txt = reg[0];
+            }
+            $(this).val(txt);
+        }).change(function () {
+            $(this).keypress();
+            var v = $(this).val();
+            if (/\.$/.test(v))
+            {
+                $(this).val(v.substr(0, v.length - 1));
+            }
+        });
+    }
+</script>
+</body>
+</html>

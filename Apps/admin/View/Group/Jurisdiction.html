@@ -1,0 +1,105 @@
+<extend name="Public/base"/>
+<block name="style">
+</block>
+<block name="scriptop">
+</block>
+<block name="body">
+    <fieldset class="layui-elem-field">
+        <legend>{$language.jurisdiction}{$language.menu-management}</legend>
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="float:right;margin-right:25px;">
+                    <button class="layui-btn" onclick="create()" type="button">{$language.created}</button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form">
+            <table class="layui-table" lay-size="sm">
+                <colgroup>
+                    <col width="30">
+                    <col width="30">
+                    <col width="30">
+                    <col width="100">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>{$language.module}</th>
+                    <th>{$language.chinese}{$language.title}</th>
+                    <th>{$language.description}</th>
+                    <th>{$language.operation}</th>
+                </tr>
+                </thead>
+                <tbody id="ajax_return">
+                <foreach name="group" item="val" key="k">
+                    <tr>
+                        <td>{$val.id}</td>
+                        <td>{$val.module}</td>
+                        <td>{$val.title}</td>
+                        <td>{$val.description}</td>
+                        <td>
+                            <button class="layui-btn layui-btn-sm" onclick="update({$val.id})">{$language.updated}{$language.jurisdiction}</button>
+                        </td>
+                    </tr>
+                </foreach>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form','element'], function(){
+            var $ = layui.jquery
+                    ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+        });
+        /*打开创建页面*/
+        function create(){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.created}'
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Group/createGroup'
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+
+        /*打开编辑页面*/
+        function update(id){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.updated}'
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_iframe'
+                ,content: '/admin.php/Group/updateGroup/id/'+id
+                ,btn: ['{$language.define}','{$language.close}'] //只是为了演示
+                ,yes: function(){
+                    var iframe = $("#print_iframe").children("iframe").attr("id");
+                    window.frames[iframe].subData();
+                }
+                ,btn2: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+        /*关闭二级页面*/
+        function layer_back(){
+            layer.closeAll();
+            window.location.reload();
+        }
+    </script>
+</block>

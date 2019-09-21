@@ -1,0 +1,68 @@
+<foreach name="data" item="vo" key="k">
+    <tr>
+        <td>
+            {$vo.last_name}({$vo.first_name})
+            <if condition="$vo.status neq 0">
+                <br/>{$language.Administrators}：{$vo.adminName} <br/>{$language.time}：{$vo.update_at|date="Y-m-d H:i:s",###}
+            </if>
+        </td>
+        <td>({$vo.phone_code}){$vo.phone}</td>
+        <td>{$vo.email}</td>
+        <td>{$vo.date}&nbsp;&nbsp;{$vo.time} </td>
+        <td>
+            <volist name="vo.product" id="val">
+                {$val.chinese}({$val.english})<br/>
+            </volist>
+        </td>
+        <td>
+            <switch name="vo.status">
+                <case value="0">{$language.Untreated}<br/><button onclick="updateStatus({$vo.id},1)">{$language.Completed}</button><br/><button onclick="updateStatus({$vo.id},2)">{$language.Abandoned}</button></case>
+                <case value="1">{$language.Completed}</case>
+                <case value="2">{$language.Abandoned}</case>
+                <default />	{$language.Untreated}<br/><button onclick="updateStatus({$vo.id},1)">{$language.Completed}</button><br/><button onclick="updateStatus({$vo.id},2)">{$language.Abandoned}</button>
+            </switch>
+        </td>
+        <td>{$vo.create_at|date="Y-m-d H:i:s",###}</td>
+        <td>
+            <ul class="pullDown-nav">
+                <li class="pullDown-nav-item">
+                    <a href="javascript:;">{$language.operation}</a>
+                    <dl class="pullDown-nav-child">
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="update({$vo.id})">{$language.updated}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="sendMessage({$vo.id})">{$language.send-short-messages}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="sendMail({$vo.id})">{$language.send-mail}</a></dd>
+                        <dd><a href="javascript:;" style="background-color: #00a65a;" onclick="updateRemark({$vo.id})">{$language.remark}</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</foreach>
+<script>
+    var form = layui.form;
+    form.render('checkbox');
+    $(function () {
+        $(".layui-table tr td").find(".pullDown-nav").find("li.pullDown-nav-item").hover(function () {
+            if (!$(this).hasClass("pullDown-this")) {
+                $(this).addClass("pullDown-this").parent().parent().parent().siblings().find(
+                        ".pullDown-nav").find("li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).find("dl.pullDown-nav-child").css("display", "block");
+                $(this).parent().parent().parent().siblings().find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+                leavePullDownMenu();
+            }
+        },function(){
+            $(this).addClass("pullDown-this").removeClass("pullDown-this");
+            $(this).find(".pullDown-nav").find("dl.pullDown-nav-child").css("display", "none");
+        });
+
+        function leavePullDownMenu() {
+            $("dl.pullDown-nav-child").on('mouseleave', function () {
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").removeClass("pullDown-this");
+                $(this).parentsUntil(".layui-table").find("tr").find("td").find(".pullDown-nav").find(
+                        "li.pullDown-nav-item").find("dl.pullDown-nav-child").css("display", "none");
+            })
+        }
+    });
+</script>

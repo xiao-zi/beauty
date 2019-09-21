@@ -1,0 +1,154 @@
+@charset "utf-8";
+/*公用       s*/
+
+
+/*[初始化部分]              s*/
+
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: #2d374b;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+em {
+	font-style: normal;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p {
+	word-wrap: break-word;
+}
+.registerPage {
+	background: url(/Public/Admin/images/login/background.png) 0 0 no-repeat;
+	height: 100vh;
+	background-size: 100% 100%;
+}
+.msWidth {
+	width: 1318px;
+	margin: 0px auto;
+	background-color: #eff3f8;
+	width: 100%;
+	min-width: 1200px;
+}
+
+.registerPage .registerInfo {
+	width: 21.65%;
+	height: 230px;
+	margin: 0px auto;
+	/*padding-top: 336px;*/
+	padding-top: 16%;
+}
+
+.registerPage .registerInfo ul {
+	color: #fff;
+	font-size: 14px;
+}
+
+.registerPage .registerInfo ul li {
+	position: relative;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+.registerPage .registerInfo ul li img {
+	width: 24px;
+	height: 26px;
+	position: absolute;
+	left: 10px;
+	top: 4px;
+}
+
+.registerPage .registerInfo ul li input[type="text"],
+.registerPage .registerInfo ul li input[type="password"],
+.registerPage .registerInfo ul li input[type="button"] {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	border: none;
+	padding-left: 40px;
+	outline: none;
+}
+
+.registerPage .registerInfo ul li .checkbox {
+	padding: 8px;
+	cursor: pointer;
+}
+
+.registerPage .registerInfo ul li a.forgetPass {
+	color: #fff;
+	padding-left: 14px;
+	border-left: solid 1px #fff;
+	height: 16px;
+	line-height: 16px;
+	display: inline-block;
+}
+
+.registerPage .registerInfo ul li .checkbox label::before {
+	width: 14px;
+	height: 14px;
+}
+
+.registerPage .registerInfo ul li button {
+	padding-left: 0px;
+	background-color: rgba(254, 255, 255, .4);
+	font-size: 16px;
+	color: #fff;
+	vertical-align: middle;
+	cursor: pointer;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	border: solid 1px #fff;
+}
