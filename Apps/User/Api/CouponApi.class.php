@@ -76,4 +76,16 @@ class CouponApi extends Api{
         return $this->model->giveCoupon($id,$arr);
     }
 
+    /**
+     * 用户的优惠券
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return mixed
+     */
+    public function customerCoupon($where='',$order='',$limit=''){
+        return $this->model->customerCoupon($where,$order,$limit);
+    }
+
+
 }

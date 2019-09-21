@@ -27,4 +27,13 @@ return array(
 
         'SESSION_EXPIRE'=>'72',
     ),
+
+    //价格单位的展示
+    'MONEY' => '$',
+
+    //短信的消息编辑
+    'SHORT_MESSAGE' => array(
+        //赠送优惠券的短信通知 在CouponModel写  #USER#:用户名，#TIME#:时间，#CONTENT#:优惠券内容，#TITLE#:优惠券标题
+        'GIVE_COUPON_MESSAGE' => '尊敬的用户：#USER#，恭喜你获取了一张我们特意准备的一张#TITLE#，#CONTENT#，使用时间：#TIME#，请你及时使用',
+    ),
 );

@@ -1,0 +1,19 @@
+<foreach name="data" item="vo" key="k">
+    <tr id="{$vo.id}">
+        <td>{$vo.cart}</td>
+        <td>{$vo.username}</td>
+        <td>{$vo.title}</td>
+        <td>{$vo.create_at|date="Y-m-d H:i:s",###}</td>
+        <td>
+            <switch name="vo.status">
+                <case value="1">{$language.NO}</case>
+                <case value="2">{$language.YES}</case>
+            </switch>
+        </td>
+        <td>{$vo.over_time|date="Y-m-d",###}</td>
+        <td><notempty name="vo.use_time">{$vo.use_time|date="Y-m-d H:i:s",###}</notempty></td>
+        <td>
+            <button type="button" onclick="delCustomerCoupon({$vo.id})" class="layui-btn layui-btn-danger"><i class="layui-icon"></i></button>
+        </td>
+    </tr>
+</foreach>

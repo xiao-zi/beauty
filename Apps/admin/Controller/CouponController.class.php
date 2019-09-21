@@ -13,6 +13,7 @@ use User\Api\CategoryApi;
 use User\Api\CouponApi;
 use User\Api\CustomerApi;
 use User\Api\ProductApi;
+use User\Model\CouponModel;
 
 class CouponController extends CommonController
 {
@@ -288,6 +289,75 @@ class CouponController extends CommonController
         $result = $coupon->giveCoupon($id,$arr);
         $this->ajaxReturn($result);
     }
+
+    /**
+     * 用户的优惠券
+     */
+    public function customerCoupon(){
+        $coupon = new CouponApi();
+        $map = array(
+            'end'=>array('gt',time())
+        );
+        $couponData = $coupon->CouponSelect($map,'id','','');
+        $this->assign('coupon',$couponData);
+        //获取当前所有的客户
+        $customerApi = new CustomerApi();
+        $customerGroup = $customerApi->selectCustomer('','','','id,username,cartnum');
+        $this->assign('customerGroup',$customerGroup);
+        $this->display('Coupon/customer/index');
+    }
+
+    /**
+     * 请求用户优惠券列表信息
+     */
+    public function ajaxCustomerCoupon(){
+        $data = I('post.','',false);//获取搜索的数据
+        $map = array();
+        $data['use'] != '' ? $map['status'] = $data['use'] : false;
+        $data['user'] != '' ? $map['customer_id'] = $data['user'] : false;
+        $data['coupon'] != '' ? $map['coupon_id'] = $data['coupon'] : false;
+        if($data['over'] == 'yes'){
+            $map['over_time'] = array('lt',time());
+        }elseif($data['over'] == 'no'){
+            $map['over_time'] = array('gt',time());
+        }
+        $coupon = new CouponApi();
+        //获取当前所有的客户
+        $customer = M('Customer');
+        $coupons = M('Coupon');
+        //总条数
+        $count = M('CustomerCoupon')->where($map)->count();
+        //分页类
+        $Page = new \Think\Page($count,10);
+        $show  = $Page->show();// 分页显示输出
+        $limit = $Page->firstRow.','.$Page->listRows;
+        $data = $coupon->customerCoupon($map,'id',$limit);
+        foreach($data as $key=>$value){
+            $data[$key]['username'] = $customer->where(array('id'=>$value['customer_id']))->getField('username');
+            $data[$key]['cart'] = $customer->where(array('id'=>$value['customer_id']))->getField('cartnum');
+            $data[$key]['title'] = $coupons->where(array('id'=>$value['coupon_id']))->getField('title');
+        }
+        $back['pagenum'] = $count;
+        $back['pages'] = 10;
+        $this->assign('page',$show);// 赋值分页输出
+        $this->assign('data',$data);
+        $back['html'] = $this->fetch('Coupon/customer/ajaxIndex');
+        $this->ajaxReturn($back);
+    }
+
+    /**
+     * @param $id 删除用户的优惠券
+     */
+    public function delCustomerCoupon($id){
+        $coupon = M('CustomerCoupon');
+        $result = $coupon->where(array('id'=>$id))->delete();
+        if($result){
+            $back = array('rel'=>1,'msg'=>GSL('Successful-deletion'));
+        }else{
+            $back = array('rel'=>0,'msg'=>GSL('Delete-failed'));
+        }
+        $this->ajaxReturn($back);
+    }
     /**
      * 上传网站的优惠卷图片
      */
@@ -312,4 +382,5 @@ class CouponController extends CommonController
         }
         $this->ajaxReturn($res);
     }
+
 }
