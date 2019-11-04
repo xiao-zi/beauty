@@ -1,0 +1,1991 @@
+[ 2019-10-23T15:50:43+08:00 ] 192.168.0.123 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.055122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015422s ]
+NOTIC: [8] Undefined index: Login D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 21 行.
+
+[ 2019-10-23T15:50:43+08:00 ] 192.168.0.123 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [8] Undefined index: Login D:\phpStudy\WWW\beauty\Apps\admin\Controller\CommonController.class.php 第 21 行.
+
+[ 2019-10-23T15:50:43+08:00 ] 192.168.0.123 /admin.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001127s ]
+NOTIC: [8] Undefined index: rel D:\phpStudy\WWW\beauty\Runtime\Cache\admin\760f0862255b83511df50c2ce3dc0548.php 第 12 行.
+NOTIC: [8] Undefined index: msg D:\phpStudy\WWW\beauty\Runtime\Cache\admin\760f0862255b83511df50c2ce3dc0548.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.110417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.011569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009664s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009707s ]
+
+[ 2019-10-23T15:50:59+08:00 ] 192.168.0.123 /admin.php/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0884s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0569s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `admin_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0151s ]
+SQL: UPDATE `admin_user` SET `login_time`='2019-10-23 15:50:59',`login_ip`='192.168.0.123' WHERE `id` = 1 [ RunTime:0.0696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002460s ]
+
+[ 2019-10-23T15:50:59+08:00 ] 192.168.0.123 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001919s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0086s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0792s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.1018s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`node_url`,`type`,`icon`,`sort` FROM `admin_menu` WHERE `status` = 'activation' ORDER BY sort  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000775s ]
+
+[ 2019-10-23T15:51:00+08:00 ] 192.168.0.123 /admin.php/Menu/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.1651s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0064s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `admin_menu` ORDER BY sort asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.146200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.146278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001018s ]
+
+[ 2019-10-23T15:51:22+08:00 ] 192.168.0.123 /admin.php/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0054s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0654s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0102s ]
+SQL: SELECT `id`,`realname` FROM `admin_user`  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: start D:\phpStudy\WWW\beauty\Apps\admin\Controller\OrderController.class.php 第 41 行.
+NOTIC: [8] Undefined index: end D:\phpStudy\WWW\beauty\Apps\admin\Controller\OrderController.class.php 第 42 行.
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0598s ]
+SQL: SELECT * FROM `order` ORDER BY create_at desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\beauty\Runtime\Cache\admin\cfde76d95d4a0dd880229b2abab88552.php 第 119 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035909s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001482s ]
+
+[ 2019-10-23T15:51:28+08:00 ] 192.168.0.123 /admin.php/Coupon/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008190s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008355s ]
+
+[ 2019-10-23T15:51:28+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCoupon/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0049s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0495s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `coupon` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `coupon` ORDER BY id LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036573s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001646s ]
+
+[ 2019-10-23T15:51:30+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCoupon/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `coupon` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `coupon` ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+
+[ 2019-10-23T15:51:35+08:00 ] 192.168.0.123 /admin.php/Coupon/updateCoupon/id/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0056s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0428s ]
+SQL: SELECT * FROM `product` WHERE `status` = 'activation'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0490s ]
+SQL: SELECT * FROM `category` WHERE `type` = 1  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `coupon` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2019-10-23T15:51:46+08:00 ] 192.168.0.123 /admin.php/Coupon/customerCoupon
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `coupon` WHERE `end` > 1571817106 ORDER BY id  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024108s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000632s ]
+
+[ 2019-10-23T15:51:47+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomerCoupon/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `customer_coupon` [ RunTime:0.0520s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer_coupon` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `customer_coupon` ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000621s ]
+
+[ 2019-10-23T15:51:47+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomerCoupon/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0050s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `customer_coupon` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer_coupon` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `customer_coupon` ORDER BY id LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cartnum` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `title` FROM `coupon` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000569s ]
+
+[ 2019-10-23T15:51:49+08:00 ] 192.168.0.123 /admin.php/Coupon/give
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0051s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `coupon` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `coupon` WHERE `end` > 1571817109 ORDER BY id  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0044s ]
+SQL: SELECT `id`,chinese as title,`type` FROM `category` WHERE `type` = 2 AND `status` = 'activation' ORDER BY id  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title,`type` FROM `category` WHERE `type` = 3 AND `status` = 'activation' ORDER BY id  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title,`type` FROM `category` WHERE `type` = 4 AND `status` = 'activation' ORDER BY id  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042587s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2019-10-23T15:51:49+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+
+[ 2019-10-23T15:51:49+08:00 ] 192.168.0.123 /admin.php/Coupon/ajaxCustomer/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`username`,`cartnum`,`phoneCode`,`phone`,`email`,`birth`,`sex`,`ActivityLevel`,`register_time` FROM `customer` ORDER BY id LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000507s ]
+
+[ 2019-10-23T15:52:02+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0890s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0406s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0120s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2019-10-23T15:52:06+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080828s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001616s ]
+
+[ 2019-10-23T15:52:13+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0048s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032024s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+
+[ 2019-10-23T15:52:20+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000263s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0055s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2019-10-23T15:52:21+08:00 ] 192.168.0.123 /admin.php/Package/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0051s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0053s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006973s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2019-10-23T15:52:29+08:00 ] 192.168.0.123 /admin.php/Package/showDetail?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0053s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0046s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+
+[ 2019-10-23T15:52:33+08:00 ] 192.168.0.123 /admin.php/Package/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `payment` [ RunTime:0.0380s ]
+SQL: SELECT * FROM `payment` WHERE `sn` = '20191023157181715327389' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `payment` (`sn`,`cid`,`aid`,`money`,`type`,`status`,`mode`,`create_at`,`update_at`) VALUES ('20191023157181715327389','3','1','800.00','2','2','1','1571817153','1571817153') [ RunTime:0.0003s ]
+SQL: INSERT INTO `customer_package` (`cid`,`aid`,`pid`,`content`,`over_at`,`num`,`residue`,`payid`,`create_at`,`update_at`) VALUES ('3','1','4','[{\"project\":\"1\",\"sum\":\"2\",\"num\":0},{\"project\":\"2\",\"sum\":\"3\",\"num\":0},{\"project\":\"7\",\"sum\":\"2\",\"num\":0}]','1580457153','0','7','9','1571817153','1571817153') [ RunTime:0.0004s ]
+
+[ 2019-10-23T15:52:35+08:00 ] 192.168.0.123 /admin.php/Package/Usage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0050s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 非法操作:Usage
+
+[ 2019-10-23T15:52:37+08:00 ] 192.168.0.123 /admin.php/Package/Statistics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 非法操作:Statistics
+
+[ 2019-10-23T15:52:38+08:00 ] 192.168.0.123 /admin.php/Package/Usage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0049s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 非法操作:Usage
+
+[ 2019-10-23T15:53:32+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005299s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2019-10-23T15:53:34+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0349s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2019-10-23T15:53:34+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005176s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2019-10-23T15:53:35+08:00 ] 192.168.0.123 /admin.php/Package/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006616s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000531s ]
+
+[ 2019-10-23T15:53:36+08:00 ] 192.168.0.123 /admin.php/Package/Usage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 非法操作:Usage
+
+[ 2019-10-23T15:53:42+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005103s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2019-10-23T15:54:15+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0047s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006741s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000543s ]
+
+[ 2019-10-23T15:54:18+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000634s ]
+
+[ 2019-10-23T15:54:33+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0047s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006275s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2019-10-23T15:54:35+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0047s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0476s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0045s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005470s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000609s ]
+
+[ 2019-10-23T15:54:39+08:00 ] 192.168.0.123 /admin.php/Package/update/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0047s ]
+SQL: SELECT `id`,chinese as title,`price`,`discount` FROM `product`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2019-10-23T15:54:48+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000542s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000576s ]
+
+[ 2019-10-23T15:56:29+08:00 ] 192.168.0.123 /admin.php/Package/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2019-10-23T15:56:30+08:00 ] 192.168.0.123 /admin.php/Package/Usage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+ERR: 非法操作:Usage
+
+[ 2019-10-23T15:56:37+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2019-10-23T15:56:39+08:00 ] 192.168.0.123 /admin.php/Package/update/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0447s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0051s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0048s ]
+SQL: SELECT `id`,chinese as title,`price`,`discount` FROM `product`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008175s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2019-10-23T15:56:42+08:00 ] 192.168.0.123 /admin.php/Package/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`username`,`cartnum` FROM `customer`  [ RunTime:0.0002s ]
+SQL: SELECT `id`,chinese as title FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006358s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2019-10-23T15:56:45+08:00 ] 192.168.0.123 /admin.php/Package/showDetail?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0049s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0049s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+
+[ 2019-10-23T15:56:47+08:00 ] 192.168.0.123 /admin.php/Package/showDetail?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0049s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0049s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005901s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005964s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+
+[ 2019-10-23T15:56:50+08:00 ] 192.168.0.123 /admin.php/Package/showDetail?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0049s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0050s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006214s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+
+[ 2019-10-23T15:58:51+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0050s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+
+[ 2019-10-23T15:58:53+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0047s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0046s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000539s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000573s ]
+
+[ 2019-10-23T15:58:54+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0045s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000602s ]
+
+[ 2019-10-23T15:59:10+08:00 ] 192.168.0.123 /admin.php/Package/update/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0051s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0047s ]
+SQL: SELECT `id`,chinese as title,`price`,`discount` FROM `product`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2019-10-23T15:59:15+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0042s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005209s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+
+[ 2019-10-23T15:59:28+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0053s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+
+[ 2019-10-23T15:59:30+08:00 ] 192.168.0.123 /admin.php/Package/showDetail/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0045s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `product` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000606s ]
+
+[ 2019-10-23T15:59:58+08:00 ] 192.168.0.123 /admin.php/Reservation/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0044s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070206s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2019-10-23T15:59:58+08:00 ] 192.168.0.123 /admin.php/Reservation/ajaxReservation/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reservation` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `reservation` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reservation` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`aid`,`first_name`,`last_name`,`phone`,`email`,`date`,`time`,`status`,`create_at`,`update_at`,`remark`,`product`,`phone_code` FROM `reservation` ORDER BY create_at LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('2','3')  [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('3')  [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('2','3','5')  [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022286s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+
+[ 2019-10-23T15:59:58+08:00 ] 192.168.0.123 /admin.php/Reservation/ajaxReservation/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reservation` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `reservation` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reservation` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`aid`,`first_name`,`last_name`,`phone`,`email`,`date`,`time`,`status`,`create_at`,`update_at`,`remark`,`product`,`phone_code` FROM `reservation` ORDER BY create_at LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('2','3')  [ RunTime:0.0003s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('3')  [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese`,`english` FROM `product` WHERE `id` IN ('2','3','5')  [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007509s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+
+[ 2019-10-23T16:00:05+08:00 ] 192.168.0.123 /admin.php/Reservation/createReservation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0052s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `product` WHERE `status` = 'activation'  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.127965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.128032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2019-10-23T16:00:17+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006707s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2019-10-23T16:00:20+08:00 ] 192.168.0.123 /admin.php/Package/update/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0052s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0050s ]
+SQL: SELECT `id`,chinese as title,`price`,`discount` FROM `product`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2019-10-23T16:00:25+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0046s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0048s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2019-10-23T16:02:17+08:00 ] 192.168.0.123 /admin.php/Package/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0045s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,chinese as title,`original`,`present`,`date`,`create_at`,`update_at` FROM `package`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2019-10-23T16:02:20+08:00 ] 192.168.0.123 /admin.php/Package/userPackage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `admin_config` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0047s ]
+SQL: SELECT admin_user.*,admin_group.title as groups FROM `admin_user` INNER JOIN admin_group on admin_group.id = admin_user.grouping  WHERE ( admin_user.id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `admin_config`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer_package` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`cid`,`pid`,`aid`,`over_at`,`num`,`residue`,`create_at`,`update_at` FROM `customer_package` ORDER BY update_at desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `admin_user` [ RunTime:0.0043s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `chinese` FROM `package` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `realname` FROM `admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005201s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000609s ]
+

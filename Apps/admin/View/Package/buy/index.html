@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/Public/Layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/Public/Layui/css/template.css">
+</head>
+<body>
+<form class="layui-form" id="form">
+    <blockquote class="layui-elem-quote">{$language.explain-red}<b style="color:#d70101">*</b>{$language.required-important}</blockquote>
+    <div class="layui-col-md8">
+        <div class="layui-form-item">
+            <div class="layui-block">
+                <label class="layui-form-label">{$language.customer}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <select name="data[cid]" lay-search="customer">
+                        <option value="">{$language.customer}</option>
+                        <volist name="customer" id="val">
+                            <option value="{$val.id}">{$val.username}（{$val.cartnum}）</option>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-block">
+                <label class="layui-form-label">{$language.package}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <select name="data[pid]" lay-search=""  lay-filter="package">
+                        <option value="">{$language.package}</option>
+                        <volist name="data" id="val">
+                            <option value="{$val.id}">{$val.title}</option>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-block">
+                <label class="layui-form-label">{$language.Payment-method}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    {$pay}
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-block">
+                <label class="layui-form-label">{$language.Payment-status}：<b style="color:#d70101">*</b></label>
+                <div class="layui-input-block">
+                    <select name="data[status]" lay-search="" >
+                        <option value="">{$language.Payment-status}</option>
+                        <option value="1">{$language.Unpaid}</option>
+                        <option value="2" selected>{$language.Paid}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md4">
+        <div class="layui-form-item" id="table-show">
+        </div>
+    </div>
+    <div class="layui-form-item layui-layout-admin">
+        <div class="layui-footer" style="left: auto;">
+            <a class="layui-btn" onclick="subCreate()"><i class="layui-icon">&#xe605;</i>{$language.Submission} </a>
+            <button type="reset" class="layui-btn layui-btn-primary"><i class="layui-icon">&#x1006;</i>{$language.Reset}</button>
+        </div>
+    </div>
+</form>
+<script src="/Public/Layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
+<script>
+    layui.use(['form','layer'], function(){
+        var form = layui.form
+                ,layer = layui.layer;
+        //监听select下拉选中事件
+        form.on('select(package)', function(data) {
+            var value = data.value;
+            $.ajax({
+                cache: true,
+                type: 'get',
+                url:'/admin.php/Package/showDetail?id='+value,
+                dataType:'json',
+                success: function(json){
+                    $('#table-show').text('')
+                    $('#table-show').append(json)
+                }
+            });
+        });
+    });
+</script>
+<script>
+    function subCreate(){
+        $.ajax({
+            cache: true,
+            type: 'POST',
+            url:'/admin.php/Package/buy',
+            data:$('#form').serialize(),// 你的formid
+            dataType:'json',
+            success: function(json){
+                if(json.rel==1){
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.define}'] //按钮
+                    }, function(){
+                        layer.close(layer.index);
+                    });
+                }else{
+                    layer.confirm(json.msg, {
+                        btn: ['{$language.close}'] //按钮
+                    }, function(){
+                        layer.close(layer.index);
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<extend name="Public/base"/>
+<block name="style">
+    <link rel="stylesheet" href="/Public/Admin/css/User/drop-down.css" media="all">
+</block>
+<block name="scriptop">
+</block>
+<block name="body">
+    <fieldset class="layui-elem-field">
+        <legend>{$language.screen}</legend>
+        <div class="layui-field-box">
+            <form class="layui-form" method="post" name="search-form2" id="search-form2">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.Administrators}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="aid" lay-search="">
+                                <option value="">{$language.Administrators}</option>
+                                <volist name="userGroup" id="val">
+                                    <option value="{$val.id}">{$val.realname}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.customer}：</label>
+                        <div class="layui-input-inline">
+                            <select name="cid" lay-search="">
+                                <option value="">{$language.customer}</option>
+                                <volist name="customerGroup" id="val">
+                                    <option value="{$val.id}">{$val.username}（{$val.cartnum}）</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.Payment-status}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="status" lay-search="">
+                                <option value="">{$language.Payment-status}</option>
+                                <option value="0">{$language.Outstanding-account}</option>
+                                <option value="1">{$language.Arrival-account}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.Payment-method}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <select name="status" lay-search="">
+                                <option value="">{$language.Payment-method}</option>
+                                <option value="1">{$language.Pay-card}</option>
+                                <option value="2">{$language.cash}</option>
+                                <option value="3">{$language.Bank-transfer}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.start-time}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <input name="start" autocomplete="off" id="start" class="layui-input" type="text">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.end-time}：</label>
+                        <div class="layui-input-inline" style="width: 130px;">
+                            <input name="end" autocomplete="off" id="end" class="layui-input" type="text">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{$language.Order-number}：</label>
+                        <div class="layui-input-inline" style="width: 300px;">
+                            <input name="keywords"  placeholder="{$language.Order-number}" class="layui-input" type="text" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="float:right;margin-right:25px;">
+                        <button class="layui-btn" onclick="ajax_get_table('search-form2',1,true)" type="button">{$language.search}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </fieldset>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>{$language.Order-list-management}</legend>
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="float:right;margin-right:25px;">
+                    <button class="layui-btn" onclick="create()" type="button">{$language.created}</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="layui-form">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="5">
+                <col width="5">
+                <col width="80">
+                <col width="50">
+                <col width="50">
+                <col width="50">
+                <col width="100">
+                <col width="100">
+            </colgroup>
+            <thead>
+            <tr>
+                <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox"></th>
+                <th>{$language.id}</th>
+                <th>{$language.sender}</th>
+                <th>{$language.phone}</th>
+                <th>{$language.Receiver}</th>
+                <th>{$language.status}</th>
+                <th>{$language.Entry-time}</th>
+                <th>{$language.operation}</th>
+            </tr>
+            </thead>
+            <tbody id="ajax_return">
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</block>
+
+<block name="script">
+    <script>
+        layui.use(['form', 'laydate','element','laypage'], function(){
+            var $ = layui.jquery, form = layui.form, element = layui.element,laydate = layui.laydate,laypage = layui.laypage;
+            //日期
+            laydate.render({
+                elem: '#start',
+                type: 'date'
+            });
+            laydate.render({
+                elem: '#end',
+                type: 'date'
+            });
+            var num = {$page.pagenum};
+            var pages = {$page.pages};
+            var page = {$page.page};
+            //调用分页
+            laypage.render({
+                elem: 'demo7'
+                ,count: num
+                ,limit:pages
+                ,curr:page
+                ,layout: ['count', 'prev', 'page', 'next', 'skip']
+//                ,jump: function(obj){
+//                    var page_num = page;
+//                    console.log(page_num);
+////                    ajax_get_table('search-form2',page_num,false);
+//                }
+            });
+        });
+    </script>
+    <script>
+        /*打开创建页面*/
+        function create(){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: '{$language.created}'
+                ,area: ['100%', '100%']
+                ,shade: 0
+                ,maxmin: true
+                ,id:'print_frame1'
+                ,content: '/admin.php/Order/createOrder'
+                ,
+            });
+        }
+        //短信内容展示
+        function showDetail(id){
+            $.getJSON('__CONTROLLER__/showMessage',{'id':id},function(json){
+                layer.open({
+                    type: 1
+                    ,title: false //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '300px;'
+                    ,shade: 0.8
+                    ,btn: ['关闭']
+                    ,btnAlign: 'c'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">'+json.message+'</div>'
+                    ,success: function(layero){
+                        var btn = layero.find('.layui-layer-btn');
+                    }
+                });
+            });
+        }
+    </script>
+</block>

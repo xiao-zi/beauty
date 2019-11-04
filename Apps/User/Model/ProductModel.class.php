@@ -127,5 +127,20 @@ class ProductModel extends Model{
             return $back = array('rel'=>0,'msg'=>$back);
         }
     }
+    /**
+     * 获取产品的价格
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function getPrice($id){
+        $data = $this->where(array('id'=>$id))->find();
+        if($data['discount'] > 0 && $data['discount'] < 100){
+            $price = $data['price']*$data['discount']/100;
+        }else{
+            $price = $data['price'];
+        }
+        return $price;
+    }
 
 }

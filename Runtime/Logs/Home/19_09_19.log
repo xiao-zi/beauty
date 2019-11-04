@@ -1,5 +1,0 @@
-[ 2019-09-19T14:23:22+08:00 ] 192.168.0.123 /logincode.jpg
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
-

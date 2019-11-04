@@ -1,11 +1,14 @@
 <?php
 namespace admin\Controller;
 use Think\Controller;
+use User\Api\CustomerApi;
 use User\Api\EmailApi;
 use User\Api\SmsApi;
 
 class CommonController extends Controller {
     public $language = array();
+
+    public $config;
     /**
      * 后台控制器初始化
      * 查看用户是否登录
@@ -19,6 +22,7 @@ class CommonController extends Controller {
             if(!empty($dataStr)){
                 $data = json_decode($dataStr,true);
                 $_SESSION['admin'] = $data;
+                header("location:/admin.php/index/index.html");
             }else{
                 header("location:/admin.php/Login/index.html");
             }
@@ -26,6 +30,7 @@ class CommonController extends Controller {
         }else{
             //获取网站的配置信息
             $configData = getConfig();
+            $this->config = $configData ;
             /**
              * 设置时区
              */
@@ -197,6 +202,21 @@ class CommonController extends Controller {
         }else{
             return $result = ['status' => -1, 'msg' => '发送失败'];
         }
+    }
+
+    /**
+     * 用户积分兑换
+     * @param $id 用户的id
+     */
+    public function getIntegral($id){
+        $customerApi = new CustomerApi();
+        $data = $customerApi->findCustomer(array('id'=>$id),'');
+        $Integral = $data['integral'];
+        $integral_config = $this->config;
+        $money = $Integral/$integral_config['INTEGRAL'];
+        $back['integral'] = $Integral;
+        $back['money'] = $money;
+        $this->ajaxReturn($back);
     }
 
 

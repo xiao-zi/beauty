@@ -69,4 +69,13 @@ class ProductApi extends Api
     public function productStatus($where,$status){
         return $this->model->ProductStatus($where,$status);
     }
+
+    /**
+     * 获取产品的价格
+     * @param $id
+     * @return mixed
+     */
+    public function getPrice($id){
+        return $this->model->getPrice($id);
+    }
 }

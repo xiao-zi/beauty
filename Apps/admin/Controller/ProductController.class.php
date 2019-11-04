@@ -91,4 +91,14 @@ class ProductController extends CommonController {
         $this->ajaxReturn($result);
     }
 
+    /**
+     * 获取产品的价格
+     * @param $id
+     */
+    public function getProductPrice($id){
+        $productAPI = new ProductApi();
+        $price = $productAPI->getPrice($id);
+        $this->ajaxReturn($price);
+    }
+
 }

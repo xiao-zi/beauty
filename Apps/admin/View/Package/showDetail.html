@@ -1,0 +1,34 @@
+<table class="layui-table" lay-size="sm">
+    <colgroup>
+        <col width="100">
+        <col width="100">
+        <col width="100">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>{$language.project}</th>
+        <th>{$language.price}</th>
+        <th>{$language.Number}</th>
+    </tr>
+    </thead>
+    <tbody id="ajax_return">
+    <foreach name="info.content" item="vo" key="k">
+        <tr>
+            <td>{$vo.project}</td>
+            <td>{$vo.price}</td>
+            <td>{$vo.num}</td>
+        </tr>
+    </foreach>
+    <tr>
+        <th>
+            <div class="layui-table-cell laytable-cell-1-0-0"><span>{$language.original}:{$info.original}</span></div>
+        </th>
+        <th>
+            <div class="layui-table-cell laytable-cell-1-0-0"><span>{$language.present}:{$info.present}</span></div>
+        </th>
+        <th>
+            <div class="layui-table-cell laytable-cell-1-0-0"><span>{$language.Term-validity}:<if condition="$info['date'] eq 0" >无限期<else/>{$info.date}天</if></span></div>
+        </th>
+    </tr>
+    </tbody>
+</table>

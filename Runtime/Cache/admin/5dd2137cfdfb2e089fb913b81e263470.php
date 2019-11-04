@@ -61,11 +61,11 @@
                         <?php if(is_array($coupon["rule"])): $k = 0; $__LIST__ = $coupon["rule"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($k % 2 );++$k;?><tr>
                                 <td><input name="data[rule][<?php echo ($k); ?>][money]"  autocomplete="off" value="<?php echo ($val["money"]); ?>"  class="layui-input" type="text"></td>
                                 <td><input name="data[rule][<?php echo ($k); ?>][discount]"  autocomplete="off" value="<?php echo ($val["discount"]); ?>"  class="layui-input" type="text"></td>
-                                <td><button class="layui-btn layui-btn-small" type="button" onClick="delet_tr('add_rule',this)">删除</button></td>
+                                <td><button class="layui-btn layui-btn-small" type="button" onClick="delet_tr('add_rule',this)"><?php echo ($language["delete"]); ?></button></td>
                             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         <tr>
                             <td colspan="4">
-                                <button class="layui-btn layui-btn-small" onClick="add_rule()" type="button">增加一条</button>
+                                <button class="layui-btn layui-btn-small" onClick="add_rule()" type="button"><?php echo ($language["add"]); ?></button>
                             </td>
                         </tr>
                         </tbody>
@@ -161,7 +161,7 @@
 
             newTr.cells[1].firstChild.name = "data[rule]["+newTr.rowIndex+"][discount]";
 
-            newTr.cells[2].innerHTML  = '<button class="layui-btn layui-btn-small" type="button" onClick="delet_tr(\'add_rule\',this)">删除</button>';
+            newTr.cells[2].innerHTML  = '<button class="layui-btn layui-btn-small" type="button" onClick="delet_tr(\'add_rule\',this)"><?php echo ($language["delete"]); ?></button>';
 
         }
 

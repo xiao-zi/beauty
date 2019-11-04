@@ -400,3 +400,37 @@ function readJson(){
     var_dump($data);
 }
 
+/**
+ * 生成select选择器
+ * @param string $name name
+ * @param string $class class
+ * @param $selected 选择的值
+ * @param $data 选择的数据
+ * @param array $arr 对应$data的值和value
+ */
+function GenerateSelectHtml($name = '',$class = '',$selected='',$data,$arr = array('id','title')){
+    $html = '<select class="'.$class.'" name="'.$name.'" lay-search="" >';
+    foreach($data as $key=>$value){
+        if($selected == $value[$arr[0]]){
+            $html .= '<option value="'.$value[$arr[0]].'" selected>'.$value[$arr[1]].'</option>';
+        }else{
+            $html .= '<option value="'.$value[$arr[0]].'">'.$value[$arr[1]].'</option>';
+        }
+    }
+    $html .= '</select>';
+    return $html;
+}
+
+/**
+ * 重新生成新的一维数组
+ * @param $array
+ * @param $key
+ */
+function getArrayKeyValue($array,$key){
+    $arr = array();
+    foreach($array as $k=>$val){
+        $arr[] = $val[$key];
+    }
+    return $arr;
+}
+

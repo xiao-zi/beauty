@@ -72,7 +72,6 @@
                     </table>
                     <div class="layui-form-mid layui-word-aux">金额代表消费金额，折扣代表优惠力度，满减的折扣取值范围不能大于消费金额，折扣的取值范围0~100,90代表9折</div>
                 </div>
-
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><?php echo ($language["project"]); ?>：</label>

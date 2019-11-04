@@ -28,7 +28,7 @@ class IndexController extends CommonController {
             default: $field = 'id,pid,title,url,node_url,type,icon,sort';break;
         }
         if($user['grouping'] == 1){//如果用户的管理权限为1的话，则他拥有所有的权限
-            $list = $menu->order('sort')->field($field)->select();
+            $list = $menu->where(array('status'=>'activation'))->order('sort')->field($field)->select();
         }else{
             $group = M('AdminGroup');
             $rules = $group->where(array('id'=>$user['grouping']))->getField('rules');

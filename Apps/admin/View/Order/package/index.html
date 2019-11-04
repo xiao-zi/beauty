@@ -1,0 +1,155 @@
+<extend name="Public/base"/>
+<block name="style">
+    <style type="text/css">
+        /*设置 layui 表格中单元格内容溢出可见样式*/
+        .table-overlay .layui-table-view,
+        .table-overlay .layui-table-box,
+        .table-overlay .layui-table-body {
+            overflow: visible;
+        }
+
+        .table-overlay .layui-table-cell {
+            height: auto;
+            overflow: visible;
+        }
+    </style>
+</block>
+<block name="scriptop"></block>
+<block name="body">
+    <!--左边-->
+    <form class="layui-form" id="form" action="" style='margin-top: 25px;'>
+        <div class="layui-col-md8">
+            <div class="layui-form-item">
+                <label class="layui-form-label">{$language.customer}：</label>
+                <div class="layui-input-block" id="customer">
+                    <select name="cid" lay-search="" lay-filter="customer" >
+                        <option value="">{$language.customer}</option>
+                        <volist name="customerGroup" id="val">
+                            <option value="{$val.id}">{$val.username}（{$val.cartnum}）</option>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" id="package" style="display: none">
+                <label class="layui-form-label">{$language.package}：</label>
+                <div class="layui-input-block">
+                    <select name="pid" lay-search="" lay-filter="package">
+                        <option value="">{$language.customer}</option>
+                        <volist name="customerGroup" id="val">
+                            <option value="{$val.id}">{$val.username}（{$val.cartnum}）</option>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" id="packageInfo">
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.Payment-method}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block">
+                        {$pay}
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-block">
+                    <label class="layui-form-label">{$language.Payment-status}：<b style="color:#d70101">*</b></label>
+                    <div class="layui-input-block">
+                        <select name="status" lay-search="" >
+                            <option value="">{$language.Payment-status}</option>
+                            <option value="1">{$language.Unpaid}</option>
+                            <option value="2" selected>{$language.Paid}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">{$language.remark}</label>
+                <div class="layui-input-block">
+                    <textarea name="remark" placeholder="{$language.remark}" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-form-item" id="table-show">
+            </div>
+        </div>
+        <div class="layui-form-item layui-layout-admin">
+            <div class="layui-footer" style="left: auto;">
+                <a class="layui-btn" onclick="subCreate()"><i class="layui-icon">&#xe605;</i>{$language.Submission} </a>
+                <button type="reset" class="layui-btn layui-btn-primary"><i class="layui-icon">&#x1006;</i>{$language.Reset}</button>
+            </div>
+        </div>
+    </form>
+</block>
+<block name="script">
+    <script>
+        layui.use(['form'], function(){
+            var form = layui.form, layer = layui.layer;
+
+            form.on('select(customer)', function(data){
+                var id = data.value;
+                $.ajax({
+                    type: 'get',
+                    url:'/admin.php/Order/getCustomerPackage/cid/'+id,
+                    dataType:'json',
+                    success: function(json){
+                        $("#package select").html("");
+                        $("#package").css("display",'block');
+                        $.each(json, function(key, val) {
+                            var option = $("<option>").val(val.id).text(val.title);
+                            $("#package select").append(option);
+                            form.render('select');
+                        });
+                        getPackageValue();
+                    }
+                });
+            })
+            form.on('select(package)', function(data){
+                getPackageValue();
+            })
+        });
+
+        function getPackageValue(){
+            var value = $("#package select").val();
+            $.ajax({
+                type: 'get',
+                url:'/admin.php/Order/findCustomerPackage/id/'+value,
+                dataType:'json',
+                success: function(json){
+                    $("#packageInfo").html("");
+                    $("#packageInfo").append(json.json);
+                    $("#table-show").html("");
+                    $("#table-show").append(json.html);
+                }
+            });
+        }
+    </script>
+    <script>
+        function subCreate(){
+            console.log($('#form').serialize())
+            $.ajax({
+                cache: true,
+                type: 'POST',
+                url:'/admin.php/Order/package',
+                data:$('#form').serialize(),// 你的formid
+                dataType:'json',
+                success: function(json){
+                    if(json.rel==1){
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.define}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }else{
+                        layer.confirm(json.msg, {
+                            btn: ['{$language.close}'] //按钮
+                        }, function(){
+                            parent.window.layer_back();
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</block>

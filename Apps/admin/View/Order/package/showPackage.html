@@ -1,0 +1,23 @@
+<table class="layui-table" lay-size="sm">
+    <colgroup>
+        <col width="100">
+        <col width="100">
+        <col width="100">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>{$language.project}</th>
+        <th>{$language.package-sum}</th>
+        <th>{$language.package-num}</th>
+    </tr>
+    </thead>
+    <tbody id="ajax_return">
+    <foreach name="content" item="vo" key="k">
+        <tr>
+            <td>{$vo.title}</td>
+            <td>{$vo.sum}</td>
+            <td>{$vo.num}</td>
+        </tr>
+    </foreach>
+    </tbody>
+</table>
